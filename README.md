@@ -1,2 +1,3 @@
 # GUI-
 Car Sale Management System
+The Car Sales Management System is designed to streamline the process of managing car sales, inventory, and customer interactions for a dealership. It consists of a web application where customers can browse car listings, request test drives, and receive quotes, along with a desktop application for dealership staff to manage car inventories, track sales, and handle customer information. The system will synchronize data between the two platforms using a REST API, ensuring real-time updates. Key features include inventory management, sales tracking, test drive scheduling, customer profiles, and reporting tools for admins. 
