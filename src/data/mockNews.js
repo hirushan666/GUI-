@@ -1,26 +1,26 @@
 export const mockNews = [
     {
         id: 1,
-        title: "New BMW M5 Competition Arrives",
-        date: "2024-03-15",
-        image: require("../Components/Assets/BMW M5 Competition.jpeg"),
-        summary: "Experience the pinnacle of performance with the latest BMW M5 Competition, now available in our showroom.",
-        category: "New Arrival"
+        title: "The All-New BMW M5 Competition",
+        date: "2024-01-15",
+        description: "Experience the pinnacle of performance with the new BMW M5 Competition. With 617 horsepower and cutting-edge technology, it redefines what's possible in a luxury sedan.",
+        imageUrl: "/assets/BMW M5 Competition.jpeg",
+        category: "New Release"
     },
     {
         id: 2,
-        title: "Exclusive Mercedes-AMG Event",
-        date: "2024-03-12",
-        image: require("../Components/Assets/BENZ AMG GT.jpg"),
-        summary: "Join us for an exclusive showcase of the latest Mercedes-AMG collection this weekend.",
-        category: "Event"
+        title: "Luxury SUV Market Growth",
+        date: "2024-01-10",
+        description: "The luxury SUV market continues to expand with new models offering unprecedented levels of comfort and performance.",
+        imageUrl: "/assets/BMW X7.jpg",
+        category: "Market Analysis"
     },
     {
         id: 3,
-        title: "Porsche 911 GT3 Test Drive Day",
-        date: "2024-03-10",
-        image: require("../Components/Assets/PORSCHE 911.jpeg"),
-        summary: "Book your slot for our upcoming Porsche test drive event featuring the new 911 GT3.",
-        category: "Event"
+        title: "Electric Vehicle Future",
+        date: "2024-01-05",
+        description: "Major automotive manufacturers announce ambitious plans for electric vehicle development and production.",
+        imageUrl: "/assets/PORSCHE 911.jpeg",
+        category: "Industry News"
     }
 ]; 

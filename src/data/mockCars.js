@@ -8,7 +8,7 @@ export const mockCars = [
         fuelType: "Petrol",
         available: true,
         downPayment: 25000,
-        imageUrl: require("../Components/Assets/BMW M5 Competition.jpeg"),
+        imageUrl: "/assets/BMW M5 Competition.jpeg",
         specs: {
             engine: "4.4L V8 Twin-Turbo",
             power: "617 hp",
@@ -24,7 +24,7 @@ export const mockCars = [
         fuelType: "Petrol",
         available: true,
         downPayment: 33000,
-        imageUrl: require("../Components/Assets/BENZ AMG GT.jpg"),
+        imageUrl: "/assets/BENZ AMG GT.jpg",
         specs: {
             engine: "4.0L V8 Biturbo",
             power: "577 hp",
@@ -40,7 +40,7 @@ export const mockCars = [
         fuelType: "Petrol",
         available: false,
         downPayment: 29000,
-        imageUrl: require("../Components/Assets/AUDI RS7.jpeg"),
+        imageUrl: "/assets/AUDI RS7.jpeg",
         specs: {
             engine: "4.0L V8 TFSI",
             power: "591 hp",
@@ -56,11 +56,11 @@ export const mockCars = [
         fuelType: "Petrol",
         available: true,
         downPayment: 37000,
-        imageUrl: require("../Components/Assets/PORSCHE 911.jpeg"),
+        imageUrl: "/assets/PORSCHE 911.jpeg",
         specs: {
             engine: "4.0L Flat-Six",
             power: "502 hp",
             acceleration: "0-60 mph in 3.2s"
         }
     }
-]; 
+];

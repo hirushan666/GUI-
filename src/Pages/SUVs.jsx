@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Car from '../Components/Car/Car';
 import styled from 'styled-components';
-import { mockSUVs } from '../data/mockSUVs';
 
 const SUVsContainer = styled.div`
     padding: 2rem;
@@ -55,13 +54,27 @@ const FilterButton = styled.button`
 const SUVs = () => {
     const [suvs, setSUVs] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [priceFilter, setPriceFilter] = useState('all');
 
     useEffect(() => {
-        setTimeout(() => {
-            setSUVs(mockSUVs);
-            setLoading(false);
-        }, 1000);
+        const fetchSUVs = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/api/suvs');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch SUVs');
+                }
+                const data = await response.json();
+                setSUVs(data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching SUVs:', err);
+                setError(err.message);
+                setLoading(false);
+            }
+        };
+
+        fetchSUVs();
     }, []);
 
     const filterSUVs = () => {
@@ -75,6 +88,14 @@ const SUVs = () => {
         return (
             <SUVsContainer>
                 <PageTitle>Loading luxury SUVs...</PageTitle>
+            </SUVsContainer>
+        );
+    }
+
+    if (error) {
+        return (
+            <SUVsContainer>
+                <PageTitle>Error: {error}</PageTitle>
             </SUVsContainer>
         );
     }

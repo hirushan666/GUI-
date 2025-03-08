@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Car from '../Components/Car/Car';
 import styled from 'styled-components';
-import { mockCars } from '../data/mockCars';
 
 const CarsContainer = styled.div`
     padding: 2rem;
@@ -55,13 +54,28 @@ const FilterButton = styled.button`
 const Cars = () => {
     const [cars, setCars] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [priceFilter, setPriceFilter] = useState('all');
 
     useEffect(() => {
-        setTimeout(() => {
-            setCars(mockCars);
-            setLoading(false);
-        }, 1000);
+        const fetchCars = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/api/cars');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch cars');
+                }
+                const data = await response.json();
+                console.log(data);
+                setCars(data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching cars:', err);
+                setError(err.message);
+                setLoading(false);
+            }
+        };
+
+        fetchCars();
     }, []);
 
     const filterCars = () => {
@@ -75,6 +89,14 @@ const Cars = () => {
         return (
             <CarsContainer>
                 <PageTitle>Loading luxury vehicles...</PageTitle>
+            </CarsContainer>
+        );
+    }
+
+    if (error) {
+        return (
+            <CarsContainer>
+                <PageTitle>Error: {error}</PageTitle>
             </CarsContainer>
         );
     }
